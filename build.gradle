@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+repositories {
+    // Use local Maven repo location. We don't need this if we only want to install
+    // an artifact, but we do need it if we want to use dependencies from the local
+    // repository.
+    mavenRepo urls: localMavenRepo
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.collections:google-collections:1.0-rc5'
+    compile 'junit:junit:4.+'
+}
+task hello {
+    doLast {
+        println 'hello world!'
+    }
+}
+
+task shortcut << {
+    def localMavenRepo2 = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+    println localMavenRepo2
+}
+
+task depend(dependsOn: shortcut) << {
+    println 'run after short cut'
+}

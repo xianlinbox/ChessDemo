@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="Lincoln.local" name="basic.ListProcessTest" tests="3" time="0.057" timestamp="2012-04-24T02:37:24">
+  <properties />
+  <testcase classname="basic.ListProcessTest" name="test_every_element_in_list_add_one" time="0.0060" />
+  <testcase classname="basic.ListProcessTest" name="test_every_element_in_list_multiply_two" time="0.0" />
+  <testcase classname="basic.ListProcessTest" name="test_get_even_number_from_input_list" time="0.0080" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
