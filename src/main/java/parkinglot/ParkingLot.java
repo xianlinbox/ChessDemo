@@ -41,4 +41,12 @@ public class ParkingLot {
     public double vacancyRate() {
         return spaces / capacity;
     }
+
+    public String report() {
+        return Report.reportParkingLot(this);
+    }
+
+    public String info() {
+        return capacity - spaces + "/" + capacity;
+    }
 }

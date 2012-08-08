@@ -13,11 +13,8 @@ public class Parker {
     protected List<ParkingLot> parkingLotList = new ArrayList<ParkingLot>();
     protected Chooser chooser;
 
-    Parker(Chooser chooser) {
+    public Parker(Chooser chooser) {
         this.chooser = chooser;
-    }
-
-    public Parker(){
     }
 
     public void addParkingLot(ParkingLot parkingLot) {
@@ -25,12 +22,8 @@ public class Parker {
     }
 
     public ParkingTicket park(Car car) {
-        ParkingLot choosedLot = getChooser().chooseParkingLot(parkingLotList);
+        ParkingLot choosedLot = chooser.chooseParkingLot(parkingLotList);
         return choosedLot == null ? null : choosedLot.park(car);
-    }
-
-    protected Chooser getChooser() {
-        return chooser;
     }
 
     public Car unpark(ParkingTicket ticket) {
@@ -40,5 +33,13 @@ public class Parker {
             }
         }
         return null;
+    }
+
+    public String report() {
+        return Report.reportParker(this);
+    }
+
+    public List<ParkingLot> getParkingLotList() {
+        return parkingLotList;
     }
 }
