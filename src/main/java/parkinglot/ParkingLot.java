@@ -42,8 +42,8 @@ public class ParkingLot {
         return spaces / capacity;
     }
 
-    public String report() {
-        return Report.reportParkingLot(this);
+    public String report(Report report) {
+        return report.reportParkingLot(this);
     }
 
     public String info() {

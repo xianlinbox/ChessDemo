@@ -39,6 +39,6 @@ public class ParkerManagerTest {
                 "    parkinglot:0/5\n" +
                 "    parkinglot:1/4\n" +
                 "    parkinglot:2/2\n";
-        assertThat(manager.report(), is(report));
+        assertThat(manager.report(new TextReport()), is(report));
     }
 }

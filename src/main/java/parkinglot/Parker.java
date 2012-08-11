@@ -35,8 +35,8 @@ public class Parker {
         return null;
     }
 
-    public String report() {
-        return Report.reportParker(this);
+    public String report(Report report) {
+        return report.reportParker(this);
     }
 
     public List<ParkingLot> getParkingLotList() {

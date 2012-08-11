@@ -16,8 +16,8 @@ public class ParkerManager {
         parkers.add(parker);
     }
 
-    public String report() {
-        return Report.reportManager(this);
+    public String report(Report report) {
+        return report.reportManager(this);
     }
 
     public List<Parker> getParkers() {
