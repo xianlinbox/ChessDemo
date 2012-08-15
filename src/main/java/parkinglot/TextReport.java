@@ -17,7 +17,7 @@ public class TextReport implements Report {
     public String reportManager(ParkerManager parkerManager) {
         StringBuilder stringBuilder = new StringBuilder().append("manager:\n");
         for (Parker parker : parkerManager.getParkers()) {
-            stringBuilder.append(parker.report(new TextReport()));
+            stringBuilder.append(parker.report(this));
         }
         return stringBuilder.toString();
     }
@@ -26,7 +26,7 @@ public class TextReport implements Report {
     public String reportParker(Parker parker) {
         StringBuilder stringBuilder = new StringBuilder().append(TWO_SPACE_NDENT).append("parker:\n");
         for (ParkingLot parkingLot : parker.getParkingLotList()) {
-            stringBuilder.append(parkingLot.report(new TextReport()));
+            stringBuilder.append(parkingLot.report(this));
         }
         return stringBuilder.toString();
     }
